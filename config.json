@@ -1,12 +1,40 @@
 {
-  "name": "Demo Addon",
+  "name": "texecom2mqtt",
   "version": "0.1",
-  "slug": "myaddon",
-  "description": "Add-on that prints 'Hello, world' to the log and exits",
-  "url": "https://github.com/issacg/hassio-addon-devcontainer",
-  "startup": "once",
-  "boot": "manual",
-  "options": {},
-  "schema": {}, 
-  "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+  "slug": "texecom2mqtt",
+  "description": "Add-on to interface with Texecom Premier Elite alarm panels using MQTT",
+  "url": "https://github.com/dchesterton/texecom2mqtt-hassio",
+  "startup": "application",
+  "image": "dchesterton/texecom2mqtt",
+  "boot": "auto",
+  "options": {
+    "texecom": {
+      "host": null,
+      "udl_password": ""
+    },
+    "mqtt": {
+      "host": "mqtt://core-mosquitto:1883",
+      "username": null,
+      "password": null
+    },
+    "homeassistant": {
+      "discovery": true
+    }
+  },
+  "schema": {
+    "texecom": {
+      "host": "str",
+      "udl_password": "str?",
+      "port": "int?"
+    },
+    "mqtt": {
+      "host": "str",
+      "username": "str?",
+      "password": "str?"
+    },
+    "homeassistant": {
+      "discovery": "bool"
+    }
+  },
+  "arch": ["amd64", "armv7"]
 }
