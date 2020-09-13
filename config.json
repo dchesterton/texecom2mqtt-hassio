@@ -21,20 +21,6 @@
       "discovery": true
     }
   },
-  "schema": {
-    "texecom": {
-      "host": "str",
-      "udl_password": "str?",
-      "port": "int?"
-    },
-    "mqtt": {
-      "host": "str",
-      "username": "str?",
-      "password": "str?"
-    },
-    "homeassistant": {
-      "discovery": "bool"
-    }
-  },
+  "schema": false,
   "arch": ["amd64", "armv7"]
 }
