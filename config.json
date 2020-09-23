@@ -22,5 +22,5 @@
     }
   },
   "schema": false,
-  "arch": ["amd64", "armv7", "arm64"]
+  "arch": ["amd64", "armv7", "aarch64"]
 }
