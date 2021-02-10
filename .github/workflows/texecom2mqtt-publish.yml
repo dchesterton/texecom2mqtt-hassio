@@ -14,3 +14,13 @@ jobs:
         with:
           branch: master
           message: 'Bump version to ${{ github.event.client_payload.version }}'
+      - name: Create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.event.client_payload.version }}
+          release_name: Release v${{ github.event.client_payload.version }}
+          commitish: master
+          draft: false
+          prerelease: false
