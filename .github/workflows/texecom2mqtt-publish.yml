@@ -1,0 +1,12 @@
+name: Repository Dispatch
+on:
+  repository_dispatch:
+    types: [texecom2mqtt-publish]
+jobs:
+  update_version:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - run: echo ${{ github.event.client_payload.version }}
