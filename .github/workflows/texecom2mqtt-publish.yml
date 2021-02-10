@@ -9,4 +9,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
-      - run: echo ${{ github.event.client_payload.version }}
+      - run: python update.py ${{ github.event.client_payload.version }}
+      - uses: EndBug/add-and-commit@v7
+        with:
+          branch: master
+          message: 'Bump version to ${{ github.event.client_payload.version }}'

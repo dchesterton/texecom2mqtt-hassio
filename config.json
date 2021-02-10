@@ -1,6 +1,6 @@
 {
   "name": "texecom2mqtt",
-  "version": "v1.0.4",
+  "version": "1.0.15",
   "slug": "texecom2mqtt",
   "description": "Add-on to interface with Texecom Premier Elite alarm panels using MQTT",
   "url": "https://github.com/dchesterton/texecom2mqtt-hassio",
@@ -9,18 +9,61 @@
   "boot": "auto",
   "options": {
     "texecom": {
-      "host": null,
-      "udl_password": ""
+      "host": null
     },
     "mqtt": {
-      "host": "mqtt://core-mosquitto:1883",
-      "username": null,
-      "password": null
+      "host": "mqtt://core-mosquitto:1883"
     },
     "homeassistant": {
       "discovery": true
-    }
+    },
+    "areas": [],
+    "zones": []
   },
-  "schema": {},
-  "arch": ["amd64", "armv7", "aarch64"]
+  "schema": {
+    "log": "list(debug,panel,info,warning,error)?",
+    "texecom": {
+      "host": "str",
+      "udl_password": "password?",
+      "port": "int?"
+    },
+    "mqtt": {
+      "host": "str",
+      "username": "str?",
+      "password": "password?",
+      "retain": "bool?",
+      "retain_log": "bool?",
+      "qos": "int(0,2)?",
+      "client_id": "str?",
+      "keepalive": "int?"
+    },
+    "homeassistant": {
+      "discovery": "bool?",
+      "prefix": "str?"
+    },
+    "zones": [
+      {
+        "id": "str",
+        "name": "str?"
+      }
+    ],
+    "areas": [
+      {
+        "id": "str",
+        "name": "str?",
+        "full_arm": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
+        "part_arm_1": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
+        "part_arm_2": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
+        "part_arm_3": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
+        "code": "str?",
+        "code_arm_required": "bool?",
+        "code_disarm_required": "bool?"
+      }
+    ]
+  },
+  "arch": [
+    "amd64",
+    "armv7",
+    "aarch64"
+  ]
 }
