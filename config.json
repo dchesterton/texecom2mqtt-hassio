@@ -44,7 +44,8 @@
     "zones": [
       {
         "id": "str?",
-        "name": "str?"
+        "name": "str?",
+        "device_class": "str?"
       }
     ],
     "areas": [
