@@ -9,7 +9,7 @@
   "boot": "auto",
   "options": {
     "texecom": {
-      "host": null
+      "host": ""
     },
     "mqtt": {
       "host": "mqtt://core-mosquitto:1883"
@@ -21,14 +21,14 @@
     "zones": []
   },
   "schema": {
-    "log": "list(debug,panel,info,warning,error)?",
+    "log": "str?",
     "texecom": {
       "host": "str",
       "udl_password": "password?",
       "port": "int?"
     },
     "mqtt": {
-      "host": "str",
+      "host": "str?",
       "username": "str?",
       "password": "password?",
       "retain": "bool?",
@@ -43,18 +43,18 @@
     },
     "zones": [
       {
-        "id": "str",
+        "id": "str?",
         "name": "str?"
       }
     ],
     "areas": [
       {
-        "id": "str",
+        "id": "str?",
         "name": "str?",
-        "full_arm": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
-        "part_arm_1": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
-        "part_arm_2": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
-        "part_arm_3": "list(armed_away|armed_home|armed_night|armed_custom_bypass)?",
+        "full_arm": "str?",
+        "part_arm_1": "str?",
+        "part_arm_2": "str?",
+        "part_arm_3": "str?",
         "code": "str?",
         "code_arm_required": "bool?",
         "code_disarm_required": "bool?"
