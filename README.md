@@ -59,7 +59,8 @@ texecom:
   port: 10002 # Optional: the port used to connect to the panel (default: 10001)
 
 mqtt:
-  host: "mqtt://localhost:1883" # Optional: MQTT server URL (default: "mqtt://localhost:1883")
+  host: "localhost" # Optional: MQTT server URL (default: "localhost")
+  port: 1883 # Optional: defaults to 1883
   username: my_user # Optional: MQTT server authentication user (default: nothing)
   password: my_password # Optional: MQTT server authentication password (default: nothing)
   client_id: texecom2mqtt # Optional: MQTT client ID (default: random)
@@ -67,6 +68,9 @@ mqtt:
   retain: true # Optional: MQTT retain (default: true)
   retain_log: false # Optional: MQTT retain on log messages (default: false)
   qos: 2 # Optional: MQTT QoS (default: 0)
+  ca: /cert/ca.pem # Optional: CA for secure TLS connection
+  cert: /cert/cert.pem # Optional: certificate for secure TLS connection
+  key: /cert/key.pem # Optional: private ky for secure TLS connection
 
 homeassistant:
   discovery: true # Optional: enable auto discovery (default: false)
