@@ -12,7 +12,7 @@
       "host": ""
     },
     "mqtt": {
-      "host": "mqtt://core-mosquitto:1883"
+      "host": "core-mosquitto"
     },
     "homeassistant": {
       "discovery": true
@@ -29,13 +29,17 @@
     },
     "mqtt": {
       "host": "str?",
+      "port": "int?",
       "username": "str?",
       "password": "password?",
       "retain": "bool?",
       "retain_log": "bool?",
       "qos": "int(0,2)?",
       "client_id": "str?",
-      "keepalive": "int?"
+      "keepalive": "int?",
+      "ca": "str?",
+      "cert": "str?",
+      "key": "str?"
     },
     "homeassistant": {
       "discovery": "bool?",
