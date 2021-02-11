@@ -10,6 +10,7 @@ jobs:
         with:
           ref: master
       - run: python update.py ${{ github.event.client_payload.version }}
+      - run: echo "${{ github.event.client_payload.readme }}" | openssl base64 -d -A > README.md
       - uses: EndBug/add-and-commit@v7
         with:
           branch: master
