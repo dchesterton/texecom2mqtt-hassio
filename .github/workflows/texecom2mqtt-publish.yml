@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
       - run: python update.py ${{ github.event.client_payload.version }}
       - run: echo "${{ github.event.client_payload.readme }}" | openssl base64 -d -A > README.md
       - uses: EndBug/add-and-commit@v7
         with:
-          branch: master
+          branch: main
           message: 'Bump version to ${{ github.event.client_payload.version }}'
       - name: Create release
         uses: actions/create-release@v1
@@ -22,6 +22,6 @@ jobs:
         with:
           tag_name: v${{ github.event.client_payload.version }}
           release_name: Release v${{ github.event.client_payload.version }}
-          commitish: master
+          commitish: main
           draft: false
           prerelease: false
