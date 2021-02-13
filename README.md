@@ -52,51 +52,50 @@ services:
 
 ```yaml
 texecom:
-  host: 192.168.0.1 # Required: the panel IP address
-  # Optional: the UDL password programmed in the panel. It can be found in UDL/Digi Options - UDL Options - UDL Password (default: 1234)
-  # Please note this is NOT the code used to arm/disarm the panel
-  udl_password: "abcdef"
-  port: 10002 # Optional: the port used to connect to the panel (default: 10001)
+  host: 192.168.0.1            # Required: the Texecom panel IP address
+  udl_password: "abcdef"       # Optional: the UDL password programmed in the panel, note this is NOT the code used to arm/disarm the panel (default: 1234)
+  port: 10002                  # Optional: the port used to connect to the panel (default: 10001)
 
 mqtt:
-  host: "localhost" # Optional: MQTT server URL (default: "localhost")
-  port: 1883 # Optional: defaults to 1883
-  username: my_user # Optional: MQTT server authentication user (default: nothing)
-  password: my_password # Optional: MQTT server authentication password (default: nothing)
-  client_id: texecom2mqtt # Optional: MQTT client ID (default: random)
-  keepalive: 30 # Optional: MQTT keepalive in seconds (default: 10)
-  retain: true # Optional: MQTT retain (default: true)
-  retain_log: false # Optional: MQTT retain on log messages (default: false)
-  qos: 2 # Optional: MQTT QoS (default: 0)
-  ca: /cert/ca.pem # Optional: CA for secure TLS connection
-  cert: /cert/cert.pem # Optional: certificate for secure TLS connection
-  key: /cert/key.pem # Optional: private ky for secure TLS connection
+  host: 192.168.1.5            # Optional: broker URL or IP address (default: localhost)
+  port: 1884                   # Optional: broker port (default: 1883 or 8883 for TLS connections)
+  username: my_user            # Optional: broker user (default: none)
+  password: my_password        # Optional: broker password (default: none)
+  client_id: texecom2mqtt      # Optional: client ID (default: random)
+  keepalive: 30                # Optional: keepalive in seconds (default: 10)
+  retain: true                 # Optional: retain (default: true)
+  retain_log: false            # Optional: retain on log messages (default: false)
+  qos: 2                       # Optional: QoS (default: 0)
+  ca: /cert/ca.pem             # Optional: CA for TLS connection
+  cert: /cert/cert.pem         # Optional: certificate for TLS connection
+  key: /cert/key.pem           # Optional: private key for TLS connection
 
 homeassistant:
-  discovery: true # Optional: enable auto discovery (default: false)
-  prefix: "home-assistant" # Optional: MQTT topic prefix (default: homeassistant)
+  discovery: true              # Optional: enable Home Assistant discovery (default: false)
+  prefix: home-assistant       # Optional: Home Assistant MQTT topic prefix (default: homeassistant)
 
-# Optional (only required if you want to override a zone name or device class)
+# Optional: required only if you want to override a zone name or device class
 zones:
-- id: front_door # This must be either the zone number or the zone ID (e.g. Front Door = front_door)
-  name: "Living Room Motion Sensor" # Optional: override the name of the entity
-  device_class: "motion" # Optional: set the Home Assistant device class for a zone (by default the app will guess based on zone name and type)
+- id: front_door               # Required: either the zone number or ID (e.g. 'front_door' or '4')
+  name: Front Door Sensor      # Optional: override the name of the entity
+  device_class: motion         # Optional: set the Home Assistant device class for a zone (by default the app will guess based on zone name and type)
 - id: ...
   name: ...
 
-# Required for Home Assistant mapping but otherwise optional
+# Optional: required only for Home Assistant mapping
 areas:
-- id: house # This must be either the area number or the area ID (e.g. Detached Garage = detached_garage)
-  full_arm: armed_away # Mappings of Texecom arm types (full_arm, part_arm_1, part_arm_2, part_arm_3) to Home Assistant arm types (armed_away, armed_home, armed_night, armed_custom_bypass). You can omit any which are not relevant.
+- id: house                    # Required: either the area number or ID (e.g. 'detached_garage', '4A' or '2')
+  full_arm: armed_away         # Optional: mappings of Texecom arm types to Home Assistant arm types (armed_away, armed_home, armed_night, armed_custom_bypass), omit any which are not relevant
   part_arm_1: armed_night
   part_arm_2: armed_home
   part_arm_3: armed_custom_bypass
-  code_arm_required: false # see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code_arm_required
-  code_disarm_required: false # see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code_disarm_required
-  code: "123456" # see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code
+  code_arm_required: false     # Optional: see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code_arm_required
+  code_disarm_required: false  # Optional: see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code_disarm_required
+  code: "123456"               # Optional: see https://www.home-assistant.io/integrations/alarm_control_panel.mqtt/#code
+- id: ...
+  name: ...
 
-# Optional: one of "debug", "panel", "info", "warning" or "error" (default: "info")
-log: debug
+log: debug                     # Optional: one of "trace", "debug", "panel", "info", "warning" or "error" (default: "info")
 ```
 
 ## Topics
@@ -232,7 +231,7 @@ depending on the log event type.
 - Have you added the correct IP address and port in `config.yml`? (UDL/Digi Options - Setup Modules - Setup IP Data)
 - Have you set up your ComIP/SmartCom? (UDL/Digi Options - Com Port Setup - Set either Com Port 1,
   Com Port 2 or Com Port 3 to 'ComIP Module')
-- Have you added the correct UDL password to `config.yml`? (UDL/Digi Options - UDL Options - UDL Password)
+- Have you added the correct UDL password to `config.yml`? (This can be found in UDL/Digi Options - UDL Options - UDL Password)
 - Have you disabled encryption? (UDL/Digi Options - Setup Modules - Encrypted Ports)
 
 ### Home Assistant integration
