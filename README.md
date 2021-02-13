@@ -52,9 +52,9 @@ services:
 
 ```yaml
 texecom:
-  host: 192.168.0.1            # Required: the Texecom panel IP address
-  udl_password: "abcdef"       # Optional: the UDL password programmed in the panel, note this is NOT the code used to arm/disarm the panel (default: 1234)
-  port: 10002                  # Optional: the port used to connect to the panel (default: 10001)
+  host: 192.168.0.1            # Required: Texecom panel IP address
+  udl_password: "abcdef"       # Optional: UDL password programmed in the panel. Note: this is NOT the code used to arm/disarm the panel (default: 1234)
+  port: 10002                  # Optional: port used to connect to the panel (default: 10001)
 
 mqtt:
   host: 192.168.1.5            # Optional: broker URL or IP address (default: localhost)
@@ -66,9 +66,9 @@ mqtt:
   retain: true                 # Optional: retain (default: true)
   retain_log: false            # Optional: retain on log messages (default: false)
   qos: 2                       # Optional: QoS (default: 0)
-  ca: /cert/ca.pem             # Optional: CA for TLS connection
-  cert: /cert/cert.pem         # Optional: certificate for TLS connection
-  key: /cert/key.pem           # Optional: private key for TLS connection
+  ca: /cert/ca.pem             # Optional: CA for TLS connection (default: none)
+  cert: /cert/cert.pem         # Optional: certificate for TLS connection (default: none)
+  key: /cert/key.pem           # Optional: private key for TLS connection (default: none)
 
 homeassistant:
   discovery: true              # Optional: enable Home Assistant discovery (default: false)
@@ -76,15 +76,16 @@ homeassistant:
 
 # Optional: required only if you want to override a zone name or device class
 zones:
-- id: front_door               # Required: either the zone number or ID (e.g. 'front_door' or '4')
-  name: Front Door Sensor      # Optional: override the name of the entity
-  device_class: motion         # Optional: set the Home Assistant device class for a zone (by default the app will guess based on zone name and type)
+- id: front_door               # Required: zone number or ID (e.g. 'front_door' or '4')
+  name: Front Door Sensor      # Optional: override the zone name (default: zone name in panel)
+  device_class: motion         # Optional: set the Home Assistant device class for a zone (default: the app will guess based on zone name and type)
 - id: ...
   name: ...
 
 # Optional: required only for Home Assistant mapping
 areas:
-- id: house                    # Required: either the area number or ID (e.g. 'detached_garage', '4A' or '2')
+- id: house                    # Required: area number or ID (e.g. 'detached_garage', '4A' or '2')
+  name: House Alarm            # Optional: override the area name (default: area name in panel)
   full_arm: armed_away         # Optional: mappings of Texecom arm types to Home Assistant arm types (armed_away, armed_home, armed_night, armed_custom_bypass), omit any which are not relevant
   part_arm_1: armed_night
   part_arm_2: armed_home
@@ -95,7 +96,7 @@ areas:
 - id: ...
   name: ...
 
-log: debug                     # Optional: one of "trace", "debug", "panel", "info", "warning" or "error" (default: "info")
+log: debug                     # Optional: trace, debug, panel, info, warning or error (default: info)
 ```
 
 ## Topics
