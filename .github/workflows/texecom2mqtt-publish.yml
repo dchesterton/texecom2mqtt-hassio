@@ -22,6 +22,6 @@ jobs:
         with:
           tag_name: v${{ github.event.client_payload.version }}
           release_name: Release v${{ github.event.client_payload.version }}
-          commitish: main
+          commitish: master
           draft: false
           prerelease: false
