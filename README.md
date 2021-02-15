@@ -182,6 +182,34 @@ An object representing a panel log event, e.g.
 
 ```json
 {
+    "type": "ArmFailed",
+    "description": "Arm Failed",
+    "timestamp": "2020-01-01T00:00:00+00:00",
+    "areas": ["A"],
+    "parameter": 8,
+    "entity": {
+      "zone_id": 8,
+      "zone_name": "Front Door"
+    }
+}
+```
+
+```json
+{
+    "type": "UserCode",
+    "description": "User Code",
+    "timestamp": "2020-01-01T00:00:00+00:00",
+    "areas": ["A", "B"],
+    "parameter": 1,
+    "entity": {
+      "user_id": 1,
+      "user_name": "Daniel"
+    }
+}
+```
+
+```json
+{
     "type": "TimeChanged",
     "description": "Time Changed",
     "timestamp": "2020-01-01T00:00:00+00:00",
@@ -192,6 +220,9 @@ An object representing a panel log event, e.g.
 
 `parameter` will be either a zone number, user number, expander number or keypad number
 depending on the log event type.
+
+`entity` will be a user object as per the example above for 'UserCode' events and a zone
+object as per the example above for 'ArmFailed'
 
 | Log Event Types            |                            |                            |                            |
 |----------------------------|----------------------------|----------------------------|----------------------------|
