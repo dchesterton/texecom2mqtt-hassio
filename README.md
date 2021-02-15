@@ -188,7 +188,7 @@ An object representing a panel log event, e.g.
     "areas": ["A"],
     "parameter": 8,
     "entity": {
-      "zone_id": 8,
+      "zone_id": "front_door",
       "zone_name": "Front Door"
     }
 }
