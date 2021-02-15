@@ -111,7 +111,7 @@ An object representing the current state of a zone, e.g.
     "number": 5,
     "status": 1,
     "type": "Entry/Exit 1",
-    "areas": [1, 2, 3]
+    "areas": ["A", "B", "C"]
 }
 ```
 
@@ -121,6 +121,7 @@ An object representing the current state of an area, e.g.
 
 ```json
 {
+    "id": "A",
     "name": "House Alarm",
     "number": 1,
     "status": "disarmed",
@@ -226,6 +227,17 @@ depending on the log event type.
 | UserAcknowledged           | PowerUnitFailure           | BatteryChargerFault        | ConfirmedIntruder          |
 | GSMTamper                  | RadioConfigFailure         | QuickPartArm1              | QuickPartArm2              |
 | QuickPartArm3              | RemotePartArm1             | RemotePartArm2             | RemotePartArm3             |
+
+### texecom2mqtt/[serial]/config
+
+An object representing the texecom2mqtt config, e.g.
+
+```json
+{
+    "log_level": "info",
+    "version": "1.0.30"
+}
+```
 
 ## Troubleshooting
 
