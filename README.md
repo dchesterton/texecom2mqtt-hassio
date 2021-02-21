@@ -78,7 +78,8 @@ homeassistant:
 zones:
 - id: front_door               # Required: zone number or ID (e.g. 'front_door' or '4')
   name: Front Door Sensor      # Optional: override the zone name (default: zone name in panel)
-  device_class: motion         # Optional: set the Home Assistant device class for a zone (default: the app will guess based on zone name and type)
+  device_class: motion         # Optional: set the Home Assistant device class for a zone (default: the app will guess based on zone name and type). See https://www.home-assistant.io/integrations/binary_sensor/#device-class for available device classes
+
 - id: ...
   name: ...
 
