@@ -59,6 +59,7 @@ texecom:
 mqtt:
     host: 192.168.1.5 # Optional: broker URL or IP address (default: localhost)
     port: 1884 # Optional: broker port (default: 1883 or 8883 for TLS connections)
+    prefix: texecom2mqtt # Optional: topic prefix to use (default: texecom2mqtt)
     username: my_user # Optional: broker user (default: none)
     password: my_password # Optional: broker password (default: none)
     client_id: texecom2mqtt # Optional: client ID (default: random)
