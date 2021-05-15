@@ -103,9 +103,7 @@ log: debug # Optional: trace, debug, panel, info, warning or error (default: inf
 
 ## Topics
 
-`[serial]` is the serial number of your alarm panel.
-
-### texecom2mqtt/[serial]/zone/[name]
+### texecom2mqtt/zone/[name]
 
 An object representing the current state of a zone, e.g.
 
@@ -119,7 +117,7 @@ An object representing the current state of a zone, e.g.
 }
 ```
 
-### texecom2mqtt/[serial]/area/[name]
+### texecom2mqtt/area/[name]
 
 An object representing the current state of an area, e.g.
 
@@ -141,7 +139,7 @@ The `status` parameter will be one of `disarmed`, `full_armed`, `part_armed_1`, 
 
 The `last_active_zone` parameter is only available when the status is `triggered`.
 
-### texecom2mqtt/[serial]/area/[name]/command
+### texecom2mqtt/area/[name]/command
 
 Set the area status. Payload must be one of:
 
@@ -151,21 +149,21 @@ Set the area status. Payload must be one of:
 -   `part_arm_3`
 -   `disarm`
 
-### texecom2mqtt/[serial]/text
+### texecom2mqtt/text
 
 Set the LCD text on all connected keypads. The payload is the string to display. Note: a maximum
 of 32 characters can be displayed.
 
-### texecom2mqtt/[serial]/datetime
+### texecom2mqtt/datetime
 
 Set the system date. The payload should be a ISO 8601 formatted string which
 can be parsed by [Luxon](https://moment.github.io/luxon/docs/manual/parsing.html).
 
-### texecom2mqtt/[serial]/status
+### texecom2mqtt/status
 
 Either `online` or `offline` depending on whether the application is running.
 
-### texecom2mqtt/[serial]/power
+### texecom2mqtt/power
 
 An object representing the current power consumption, e.g.
 
@@ -180,7 +178,7 @@ An object representing the current power consumption, e.g.
 
 `battery_charging_current` and `panel_current` are given in milliamps.
 
-### texecom2mqtt/[serial]/log
+### texecom2mqtt/log
 
 An object representing a panel log event, e.g.
 
@@ -263,7 +261,7 @@ object as per the example above for 'ArmFailed'
 | GSMTamper                 | RadioConfigFailure        | QuickPartArm1           | QuickPartArm2            |
 | QuickPartArm3             | RemotePartArm1            | RemotePartArm2          | RemotePartArm3           |
 
-### texecom2mqtt/[serial]/config
+### texecom2mqtt/config
 
 An object representing the texecom2mqtt config, e.g.
 
