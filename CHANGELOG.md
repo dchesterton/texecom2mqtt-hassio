@@ -1,3 +1,10 @@
+## 1.0.42
+
+ * Fix issue where topics get deleted
+ * Add additional debugging information on panel message error
+ * Add additional information to config MQTT topic
+ * Automatically delete existing topics using old topic structure
+
 ## 1.0.41
 
 ### Breaking Changes
