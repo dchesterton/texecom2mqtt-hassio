@@ -267,8 +267,11 @@ An object representing the texecom2mqtt config, e.g.
 
 ```json
 {
-    "log_level": "info",
-    "version": "1.0.30"
+    "version": "1.0.41",
+    "log_level": "debug",
+    "model": "Premier Elite 48",
+    "firmware_version": "V5.02.01LS1",
+    "serial_number": "12345"
 }
 ```
 
