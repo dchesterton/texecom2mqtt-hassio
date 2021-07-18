@@ -134,8 +134,16 @@ An object representing the current state of an area, e.g.
 }
 ```
 
-The `status` parameter will be one of `disarmed`, `full_armed`, `part_armed_1`, `part_armed_2`, `part_armed_3`,
-`triggered`, `in_entry` or `in_exit`.
+The `status` parameter will be one of:
+
+-   `disarmed`
+-   `full_armed`
+-   `part_armed_1`
+-   `part_armed_2`
+-   `part_armed_3`
+-   `triggered`
+-   `in_entry`
+-   `in_exit`
 
 The `last_active_zone` parameter is only available when the status is `triggered`.
 
