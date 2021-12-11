@@ -62,8 +62,9 @@ mqtt:
     prefix: texecom2mqtt # Optional: topic prefix to use (default: texecom2mqtt)
     username: my_user # Optional: broker user (default: none)
     password: my_password # Optional: broker password (default: none)
-    client_id: texecom2mqtt # Optional: client ID (default: random)
-    keepalive: 30 # Optional: keepalive in seconds (default: 10)
+    client_id: texecom2mqtt # Optional: client ID (default: texecom2mqtt)
+    keepalive: 30 # Optional: keepalive in seconds (default: 60)
+    clean: true # Optional: clean session (default: true)
     retain: true # Optional: retain (default: true)
     retain_log: false # Optional: retain on log messages (default: false)
     qos: 2 # Optional: QoS (default: 0)
@@ -285,11 +286,13 @@ An object representing the texecom2mqtt config, e.g.
 
 ## Troubleshooting
 
--   Have you added the correct IP address and port in `config.yml`? (UDL/Digi Options - Setup Modules - Setup IP Data)
--   Have you set up your ComIP/SmartCom? (UDL/Digi Options - Com Port Setup - Set either Com Port 1,
-    Com Port 2 or Com Port 3 to 'ComIP Module')
--   Have you added the correct UDL password to `config.yml`? (This can be found in UDL/Digi Options - UDL Options - UDL Password)
--   Have you disabled encryption? (UDL/Digi Options - Setup Modules - Encrypted Ports)
+-   The application is not working properly.
+    -   Have you added the correct IP address and port in `config.yml`? (UDL/Digi Options - Setup Modules - Setup IP Data)
+    -   Have you set up your ComIP/SmartCom? (UDL/Digi Options - Com Port Setup - Set either Com Port 1, Com Port 2 or Com Port 3 to 'ComIP Module')
+    -   Have you added the correct UDL password to `config.yml`? (This can be found in UDL/Digi Options - UDL Options - UDL Password)
+    -   Have you disabled encryption? (UDL/Digi Options - Setup Modules - Encrypted Ports)
+-   The official Texecom app is not working properly with texecom2mqtt.
+    -   Each physical connection (SmartCom or ComIP) only properly supports one concurrent application. I would recommend running either texecom2mqtt or the Texecom app, or you can install both a SmartCom and ComIP and use one for each application.
 
 ### Home Assistant integration
 
