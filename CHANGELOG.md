@@ -1,3 +1,22 @@
+## 1.1.9
+
+ * Add `reject_unauthorized` MQTT config option
+ * Fixed bug where app would try and connect to panel and MQTT after panel login failure
+ * Add additional logging around MQTT errors
+ * Improve connection and disconnection logic
+ * Bump dependencies
+
+## 1.1.8
+
+ * Fix issue where app would crash on incorrect config instead of providing useful feedback
+ * Upgrade dependencies
+ * Use Node v16 (from v12)
+ * Reduce container size
+ * Change MQTT defaults around `client_id` and `keepalive` to be more sensible and fix potential MQTT issues
+ * Send `status` update more regularly
+
+...
+
 ## 1.0.42
 
  * Fix issue where topics get deleted
