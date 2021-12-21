@@ -1,6 +1,7 @@
 name: Create Changelog On Release
 on:
   release:
+    types: [published, unpublished, created, edited, deleted, prereleased, released]
 
 jobs:
   changelog:
