@@ -1,3 +1,8 @@
+## 1.1.10
+
+- Add support for Home Assistant `arming` status
+- Add support for Home Assistant `armed_vacation` mode
+
 ## 1.1.9
 
  * Add `reject_unauthorized` MQTT config option
