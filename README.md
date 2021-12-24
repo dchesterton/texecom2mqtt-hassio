@@ -90,7 +90,7 @@ zones:
 areas:
     - id: house # Required: area number or ID (e.g. 'detached_garage', '4A' or '2')
       name: House Alarm # Optional: override the area name (default: area name in panel)
-      full_arm: armed_away # Optional: mappings of Texecom arm types to Home Assistant arm types (armed_away, armed_home, armed_night, armed_custom_bypass), omit any which are not relevant
+      full_arm: armed_away # Optional: mappings of Texecom arm types to Home Assistant arm types (armed_away, armed_home, armed_night, armed_custom_bypass, armed_vacation), omit any which are not relevant
       part_arm_1: armed_night
       part_arm_2: armed_home
       part_arm_3: armed_custom_bypass
