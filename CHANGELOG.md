@@ -1,3 +1,7 @@
+## 1.1.11
+
+- Add support for caching panel data to improve start times
+
 ## 1.1.10
 
 - Add support for Home Assistant `arming` status
