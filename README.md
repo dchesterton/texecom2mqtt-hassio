@@ -100,7 +100,7 @@ areas:
     - id: ...
       name: ...
 
-cache: true # Optional: cache panel data instead of loading it each time (recommended if using a larger panel and/or your data will not change)
+cache: true # Optional: cache panel data instead of loading it each time. Recommended if using a larger panel and/or your data will not change (default: false)
 log: debug # Optional: trace, debug, panel, info, warning or error (default: info)
 ```
 
