@@ -22,6 +22,7 @@
   },
   "schema": {
     "log": "str?",
+    "cache": "bool?",
     "texecom": {
       "host": "str",
       "udl_password": "password?",
@@ -30,6 +31,7 @@
     "mqtt": {
       "host": "str?",
       "port": "int?",
+      "prefix": "string?",
       "username": "str?",
       "password": "password?",
       "retain": "bool?",
@@ -39,7 +41,9 @@
       "keepalive": "int?",
       "ca": "str?",
       "cert": "str?",
-      "key": "str?"
+      "key": "str?",
+      "reject_unauthorized": "bool?",
+      "retain_log": "bool?"
     },
     "homeassistant": {
       "discovery": "bool?",
