@@ -1,3 +1,11 @@
+## 1.1.13
+
+- Potential fix for bug which causes a crash when loading area states on Premier Elite 640
+
+## 1.1.12
+
+- Fix issue where Docker container would not close gracefully
+
 ## 1.1.11
 
 - Add support for caching panel data to improve start times
