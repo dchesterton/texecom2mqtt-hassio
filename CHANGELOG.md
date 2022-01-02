@@ -1,3 +1,7 @@
+## 1.1.14
+
+- Fix issue with loading area state on Premier Elite 640 panels
+
 ## 1.1.13
 
 - Potential fix for bug which causes a crash when loading area states on Premier Elite 640
