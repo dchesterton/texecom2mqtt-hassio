@@ -303,4 +303,3 @@ An object representing the texecom2mqtt config, e.g.
     -   If you've changed the default prefix, have you set the correct prefix in `config.yml`?
 -   The Alarm Panel Card is not showing the correct states for my alarm in the frontend.
     -   Unfortunately, this card only shows Arm Away and Arm Home by default. You'll need to edit the card and select the additional states from the "available states" dropdown.
-    -   
