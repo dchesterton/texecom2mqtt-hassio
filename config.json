@@ -1,6 +1,6 @@
 {
   "name": "texecom2mqtt",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "slug": "texecom2mqtt",
   "description": "Add-on to interface with Texecom Premier Elite alarm panels using MQTT",
   "url": "https://github.com/dchesterton/texecom2mqtt-hassio",
@@ -42,8 +42,7 @@
       "ca": "str?",
       "cert": "str?",
       "key": "str?",
-      "reject_unauthorized": "bool?",
-      "retain_log": "bool?"
+      "reject_unauthorized": "bool?"
     },
     "homeassistant": {
       "discovery": "bool?",
