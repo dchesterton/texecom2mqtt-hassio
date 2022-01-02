@@ -31,7 +31,7 @@
     "mqtt": {
       "host": "str?",
       "port": "int?",
-      "prefix": "string?",
+      "prefix": "str?",
       "username": "str?",
       "password": "password?",
       "retain": "bool?",
