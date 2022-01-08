@@ -1,3 +1,7 @@
+## 1.1.15
+
+- Add debug logging around fetching system power
+
 ## 1.1.14
 
 - Fix issue with loading area state on Premier Elite 640 panels
