@@ -1,27 +1,41 @@
-name: Repository Dispatch
+name: Update Version
 on:
-  repository_dispatch:
-    types: [texecom2mqtt-publish]
+    repository_dispatch:
+        types: [texecom2mqtt-publish]
 jobs:
-  update_version:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-      - run: python update.py ${{ github.event.client_payload.version }}
-      - run: echo "${{ github.event.client_payload.readme }}" | openssl base64 -d -A > README.md
-      - uses: EndBug/add-and-commit@v7
-        with:
-          branch: master
-          message: 'Bump version to ${{ github.event.client_payload.version }}'
-      - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ github.event.client_payload.version }}
-          release_name: Release v${{ github.event.client_payload.version }}
-          commitish: master
-          draft: false
-          prerelease: false
+    update_version:
+        name: Update Version
+        runs-on: ubuntu-20.04
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                  ref: master
+            - name: Bump config.json version
+              run: python update.py ${{ github.event.client_payload.version }}
+            - name: Update README.md
+              run: echo "${{ github.event.client_payload.readme }}" | openssl base64 -d -A > README.md
+            - name: Update CHANGELOG.md
+              run: echo "${{ github.event.client_payload.changelog }}" | openssl base64 -d -A > CHANGELOG.md
+            - name: Commit updates
+              uses: EndBug/add-and-commit@v7
+              with:
+                  branch: master
+                  message: "ci: bump version to ${{ github.event.client_payload.version }}"
+            - name: Decode changelog
+              run: |
+                  echo "::set-output name=changelog::$(echo "$CHANGELOG" | openssl base64 -d -A)"
+              id: changelog
+              env:
+                  CHANGELOG: ${{ github.event.client_payload.clean_changelog }}
+            - name: Create release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: v${{ github.event.client_payload.version }}
+                  release_name: Release v${{ github.event.client_payload.version }}
+                  body: ${{ steps.changelog.outputs.changelog }}
+                  commitish: master
+                  draft: false
+                  prerelease: false
