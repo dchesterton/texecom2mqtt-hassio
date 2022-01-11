@@ -1,3 +1,8 @@
+## 1.2.0
+
+- Fix issue where keepalive fails causing the app to hang 
+- Add groupType to texecom2mqtt/log messages
+
 ## 1.1.15
 
 - Add debug logging around fetching system power
