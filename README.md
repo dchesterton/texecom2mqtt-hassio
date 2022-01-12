@@ -1,9 +1,13 @@
 # texecom2mqtt
 
-An application to interface with a _Texecom Premier Elite_ alarm panel via MQTT. It requires a
-[Premier Elite panel](https://www.texe.com/uk/products/series/control-panels/premier-elite-series/)
-(not Premier) with v4+ firmware and either a ComIP or SmartCom. The application supports Home Assistant
-auto-discovery and is available as a Home Assistant Add-on.
+An application to interface with a _Texecom Premier Elite_ alarm panel via MQTT. It provides real-time sensor
+updates (whether the panel is armed or not) and full arming/disarming/part arming support. The application
+also supports Home Assistant auto-discovery and is available as a Home Assistant Add-on.
+
+It requires a [Premier Elite panel](https://www.texe.com/uk/products/series/control-panels/premier-elite-series/)
+(not Premier) with v4+ firmware and either a ComIP, ComWifi or SmartCom connection. It's not recommended to run this app
+on the same physical connection as the official Texecom Connect app. You should use only one of the applications
+or use a dedicated physical connection for each.
 
 ## Buy Me A ~~Coffee~~ Beer 🍻
 

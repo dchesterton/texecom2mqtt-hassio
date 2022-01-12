@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/dchesterton/texecom2mqtt/compare/v1.2.2...v1.2.3) (2022-01-12)
+
+
+### Bug Fixes
+
+* fix issue where app doesn't quit if serial number fetch fails ([4623618](https://github.com/dchesterton/texecom2mqtt/commit/46236185a6852f753736efa294410c49866325c2))
+
+
+
 ## [1.2.2](https://github.com/dchesterton/texecom2mqtt/compare/v1.2.1...v1.2.2) (2022-01-12)
 
 
@@ -34,4 +43,3 @@
 
 
 
-## [1.1.14](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.13...v1.1.14) (2022-01-02)
