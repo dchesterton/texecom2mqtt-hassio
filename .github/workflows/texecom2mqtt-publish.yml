@@ -16,7 +16,7 @@ jobs:
             - name: Update README.md
               run: echo "${{ github.event.client_payload.readme }}" | openssl base64 -d -A > README.md
             - name: Update CHANGELOG.md
-              run: echo "${{ github.event.client_payload.changelog }}" | openssl base64 -d -A > CHANGELOG.md
+              run: echo "${{ github.event.client_payload.full_changelog }}" | openssl base64 -d -A > CHANGELOG.md
             - name: Commit updates
               uses: EndBug/add-and-commit@v7
               with:
@@ -24,10 +24,14 @@ jobs:
                   message: "ci: bump version to ${{ github.event.client_payload.version }}"
             - name: Decode changelog
               run: |
-                  echo "::set-output name=changelog::$(echo "$CHANGELOG" | openssl base64 -d -A)"
+                  changelog="$(echo "$CHANGELOG" | openssl base64 -d -A)"
+                  changelog="${changelog//'%'/'%25'}"
+                  changelog="${changelog//$'\n'/'%0A'}"
+                  changelog="${changelog//$'\r'/'%0D'}"
+                  echo "::set-output name=changelog::$changelog"
               id: changelog
               env:
-                  CHANGELOG: ${{ github.event.client_payload.clean_changelog }}
+                  CHANGELOG: ${{ github.event.client_payload.changelog }}
             - name: Create release
               uses: actions/create-release@v1
               env:
@@ -35,7 +39,7 @@ jobs:
               with:
                   tag_name: v${{ github.event.client_payload.version }}
                   release_name: Release v${{ github.event.client_payload.version }}
-                  body: ${{ steps.changelog.outputs.changelog }}
+                  body: "${{ steps.changelog.outputs.changelog }}"
                   commitish: master
                   draft: false
                   prerelease: false
