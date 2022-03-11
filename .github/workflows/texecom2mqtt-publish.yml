@@ -18,7 +18,7 @@ jobs:
             - name: Update CHANGELOG.md
               run: echo "${{ github.event.client_payload.full_changelog }}" | openssl base64 -d -A > CHANGELOG.md
             - name: Commit updates
-              uses: EndBug/add-and-commit@v7
+              uses: EndBug/add-and-commit@v9
               with:
                   branch: master
                   message: "ci: bump version to ${{ github.event.client_payload.version }}"
