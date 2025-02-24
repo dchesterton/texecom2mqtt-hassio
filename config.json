@@ -6,23 +6,26 @@
   "url": "https://github.com/dchesterton/texecom2mqtt-hassio",
   "startup": "application",
   "image": "dchesterton/texecom2mqtt",
+  "hassio_api": true,
   "boot": "auto",
+  "services": ["mqtt:want"],
   "options": {
+    "log": "info",
+    "cache": false,
     "texecom": {
-      "host": ""
+      "host": "",
+      "udl_password": "",
+      "port": 10001
     },
     "mqtt": {
-      "host": "core-mosquitto"
-    },
-    "homeassistant": {
-      "discovery": true
+      "qos": 0
     },
     "areas": [],
     "zones": []
   },
   "schema": {
-    "log": "str?",
-    "cache": "bool?",
+    "log": "list(error|warning|info|panel|debug|trace)",
+    "cache": "bool",
     "texecom": {
       "host": "str",
       "udl_password": "password?",
@@ -69,9 +72,5 @@
       }
     ]
   },
-  "arch": [
-    "amd64",
-    "armv7",
-    "aarch64"
-  ]
+  "arch": ["amd64", "armv7", "aarch64"]
 }

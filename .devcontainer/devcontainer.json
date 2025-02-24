@@ -1,29 +1,32 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json 
-// TODO: When https://github.com/microsoft/vscode-remote-release/issues/2129 is fixed, move to ${localWorkspaceFolderBasename}\
 {
-	"name": "Home Assistant Add-On",
-	"context": "..",
-	"dockerFile": "Dockerfile",
-	"appPort": 8123,
-	"runArgs": [
-		"-e",
-		"GIT_EDITOR=code --wait",
-		"--privileged"
-	],
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+	"name": "Example devcontainer for add-on repositories",
+	"image": "ghcr.io/home-assistant/devcontainer:2-addons",
+	"appPort": ["7123:8123", "7357:4357"],
+	"postStartCommand": "bash devcontainer_bootstrap",
+	"runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+	"containerEnv": {
+	  "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
 	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/myaddon,type=bind,consistency=delegated",
-	"workspaceFolder": "/workspaces/test_hassio/addons/local/myaddon",
+	"customizations": {
+	  "vscode": {
+		"extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+		"settings": {
+		  "terminal.integrated.profiles.linux": {
+			"zsh": {
+			  "path": "/usr/bin/zsh"
+			}
+		  },
+		  "terminal.integrated.defaultProfile.linux": "zsh",
+		  "editor.formatOnPaste": false,
+		  "editor.formatOnSave": true,
+		  "editor.formatOnType": true,
+		  "files.trimTrailingWhitespace": true
+		}
+	  }
+	},
 	"mounts": [
-		// Cache docker images between devcontainer rebuilds (and share between devcontainers)
-		"source=vsc-hassio-docker,target=/var/lib/docker,type=volume"
+	  "type=volume,target=/var/lib/docker",
+	  "type=volume,target=/mnt/supervisor"
 	]
-
-	// Post-create command to initialize the workspace.  For example, for a node.js add-on you may want:
-	// "postCreateCommand": "cd /workspaces/test_hassio/addons/local/myaddon && npm install",
-	// "extensions": [
-	//	"dbaeumer.vscode-eslint",
-	// 	"maty.vscode-mocha-sidebar"
-	// ]
-}
+  }
+  
