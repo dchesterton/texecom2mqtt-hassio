@@ -13,13 +13,9 @@
     "log": "info",
     "cache": false,
     "texecom": {
-      "host": "",
-      "udl_password": "",
-      "port": 10001
+      "host": ""
     },
-    "mqtt": {
-      "qos": 0
-    },
+    "mqtt": {},
     "areas": [],
     "zones": []
   },
