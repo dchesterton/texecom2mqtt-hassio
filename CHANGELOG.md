@@ -1,3 +1,13 @@
+## [1.3.1](https://github.com/dchesterton/texecom2mqtt/compare/v1.3.0...v1.3.1) (2025-02-25)
+
+
+### Bug Fixes
+
+* fix bug when handling unknown area status ([9dd080f](https://github.com/dchesterton/texecom2mqtt/commit/9dd080f9356a8ef59194cedf80f3baccd186b9e0))
+* fix call to setEventMessages when logged out ([5f56dbc](https://github.com/dchesterton/texecom2mqtt/commit/5f56dbca2c76d3b4fa0c001af907f7f83c2ca6d6))
+
+
+
 # [1.3.0](https://github.com/dchesterton/texecom2mqtt/compare/v1.2.3...v1.3.0) (2025-02-25)
 
 
@@ -60,6 +70,176 @@
 ### Features
 
 * add groupType to texecom2mqtt/log messages ([079ed00](https://github.com/dchesterton/texecom2mqtt/commit/079ed00baf42d7f632365c9caec2b13bed32224b))
+
+
+
+## [1.1.15](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.14...v1.1.15) (2022-01-08)
+
+
+
+## [1.1.14](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.13...v1.1.14) (2022-01-02)
+
+
+
+## [1.1.13](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.12...v1.1.13) (2021-12-31)
+
+
+
+## [1.1.12](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.11...v1.1.12) (2021-12-30)
+
+
+
+## [1.1.11](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.10...v1.1.11) (2021-12-30)
+
+
+
+## [1.1.10](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.9...v1.1.10) (2021-12-24)
+
+
+
+## [1.1.9](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.8...v1.1.9) (2021-12-18)
+
+
+
+## [1.1.8](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.6...v1.1.8) (2021-12-11)
+
+
+
+## [1.1.6](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.5...v1.1.6) (2021-09-22)
+
+
+
+## [1.1.5](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.4...v1.1.5) (2021-08-24)
+
+
+
+## [1.1.4](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.2...v1.1.4) (2021-08-23)
+
+
+
+## [1.1.2](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.1...v1.1.2) (2021-08-23)
+
+
+
+## [1.1.1](https://github.com/dchesterton/texecom2mqtt/compare/v1.1.0...v1.1.1) (2021-07-21)
+
+
+### Reverts
+
+* Revert "Try automatic updating of Docker Hub README" ([41d12dd](https://github.com/dchesterton/texecom2mqtt/commit/41d12dd8ba125db68d2066fb95b8f2beee8dd06b))
+
+
+
+# [1.1.0](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.42...v1.1.0) (2021-07-18)
+
+
+
+## [1.0.42](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.41...v1.0.42) (2021-05-17)
+
+
+
+## [1.0.41](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.40...v1.0.41) (2021-05-15)
+
+
+### Reverts
+
+* Revert "[ci skip] Small refactor to simplify code" ([d6f9d44](https://github.com/dchesterton/texecom2mqtt/commit/d6f9d4484b6a1cc00e5367adc46e90c2f8eb6fc4))
+
+
+
+## [1.0.40](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.39...v1.0.40) (2021-04-12)
+
+
+
+## [1.0.39](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.38...v1.0.39) (2021-03-14)
+
+
+
+## [1.0.38](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.37...v1.0.38) (2021-03-13)
+
+
+
+## [1.0.37](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.36...v1.0.37) (2021-03-10)
+
+
+
+## [1.0.36](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.35...v1.0.36) (2021-03-08)
+
+
+
+## [1.0.35](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.34...v1.0.35) (2021-02-22)
+
+
+
+## [1.0.34](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.33...v1.0.34) (2021-02-21)
+
+
+
+## [1.0.33](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.32...v1.0.33) (2021-02-18)
+
+
+
+## [1.0.32](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.31...v1.0.32) (2021-02-15)
+
+
+
+## [1.0.31](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.30...v1.0.31) (2021-02-15)
+
+
+
+## [1.0.30](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.29...v1.0.30) (2021-02-14)
+
+
+
+## [1.0.29](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.27...v1.0.29) (2021-02-14)
+
+
+
+## [1.0.27](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.26...v1.0.27) (2021-02-14)
+
+
+
+## [1.0.26](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.25...v1.0.26) (2021-02-13)
+
+
+
+## [1.0.25](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.24...v1.0.25) (2021-02-13)
+
+
+
+## [1.0.24](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.23...v1.0.24) (2021-02-13)
+
+
+
+## [1.0.23](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.22...v1.0.23) (2021-02-13)
+
+
+
+## [1.0.22](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.21...v1.0.22) (2021-02-11)
+
+
+
+## [1.0.21](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.20...v1.0.21) (2021-02-11)
+
+
+
+## [1.0.20](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.18...v1.0.20) (2021-02-11)
+
+
+
+## [1.0.18](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.16...v1.0.18) (2021-02-11)
+
+
+
+## [1.0.16](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.15...v1.0.16) (2021-02-10)
+
+
+
+## [1.0.15](https://github.com/dchesterton/texecom2mqtt/compare/v1.0.14...v1.0.15) (2021-02-10)
+
+
+
+## 1.0.14 (2021-02-10)
 
 
 
